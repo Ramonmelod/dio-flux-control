@@ -8,14 +8,14 @@ public class Contador {
 		int parametroUm = terminal.nextInt();
 		System.out.println("Digite o segundo parâmetro");
 		int parametroDois = terminal.nextInt();
-		terminal.close();
+        terminal.close();
 
 		try {
-			// chamando o método contendo a lógica de contagem
 			contar(parametroUm, parametroDois);
 
 		} catch (ParametrosInvalidosException e) {
-			// imprimir a mensagem: O segundo parâmetro deve ser maior que o primeiro
+
+			System.out.println(e);
 		}
 
 	}
@@ -25,14 +25,13 @@ public class Contador {
 		int contagem = parametroDois - parametroUm;
 
 		if (contagem <= 0) {
-			// System.out.println("segundo número precisa ser maior que o primeiro");
 			throw new ParametrosInvalidosException("segundo número precisa ser maior que o primeiro");
 		} else {
 			for (int i = 0; i <= contagem; i++) {
-				System.out.println(i);
+				System.out.println("Printing number: " + i);
 			}
 		}
 
-		// realizar o for para imprimir os números com base na variável contagem
+
 	}
 }
